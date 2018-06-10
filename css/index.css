@@ -1,0 +1,271 @@
+@import "reset.css";
+.bg {
+  background-color: #4AA2FF;
+}
+.index {
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.index img.logo {
+  width: 80%;
+  margin-top: 20%;
+  width: 240px;
+}
+.index .common_part {
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.index .input_part {
+  position: absolute;
+  bottom: 30%;
+  width: 100%;
+}
+.index .input_part .common_input {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #fff;
+}
+.index .input_part .common_input > img {
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  width: 16px;
+  height: 24px;
+}
+.index .input_part .common_input input {
+  width: 80%;
+  height: 100%;
+  background-color: transparent;
+  padding-left: 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.index .input_part .common_input button {
+  width: 120px;
+  height: 26px;
+  line-height: 24px;
+  border-radius: 5px;
+  display: inline-block;
+  border: 1px solid white;
+  text-align: center;
+  color: #fff;
+}
+.index .input_part .input_code > img {
+  width: 20px;
+  height: 16px;
+  margin-top: -8px;
+}
+.index .button_part {
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+}
+.index .button_part button {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  border-style: none;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+}
+.index .button_part button.get_report {
+  background-color: white;
+  color: #857EE8;
+}
+.index .button_part button:active {
+  opacity: 0.4;
+}
+.index .button_part > div {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.index .button_part > div span {
+  font-size: 10px;
+}
+.index .button_part > div > div {
+  line-height: 22px;
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  margin-right: 5px;
+}
+.index .button_part > div > div img {
+  width: 12px;
+  position: absolute;
+  left: 0;
+}
+img.bg_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.check_date {
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.check_date .list {
+  width: 90%;
+  margin-left: 5%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-color: #fff;
+  color: #51ADFF;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.check_date .list .list_item {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #CFEAFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.check_date .list .list_item .gouxuan {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #CFEAFF;
+  position: relative;
+}
+.check_date .list .list_item .gouxuan img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.check_date .list .list_item > input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  color: #51ADFF;
+  font-size: 16px;
+}
+.yidong_img .list {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.yidong_img .list .list_item {
+  justify-content: flex-start;
+}
+.yidong_img .list .list_item .list_item_name {
+  position: relative;
+  text-align: left;
+}
+.yidong_img .list .list_item .list_item_name.aaa {
+  width: 80px;
+}
+.yidong_img .list .list_item > input {
+  position: relative;
+  width: 80%;
+  padding-left: 20px;
+  text-align: left;
+  color: #222;
+  line-height: 40px;
+  top: 0;
+}
+.yidong_img .list .list_item .check_date_box {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #51ADFF;
+  position: relative;
+  border: 1px solid #51ADFF;
+}
+.yidong_img .list .list_item .check_date_box > input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  height: 100%;
+  line-height: 100%;
+  left: 0;
+  text-align: center;
+}
+.yidong_img .list .list_item .check_date_box > img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  border-bottom-right-radius: 5px;
+}
+.yidong_img .button_group {
+  padding: 0 8%;
+  margin-top: 16px;
+}
+.yidong_img .button_group button {
+  border-radius: 5px;
+  height: 40px;
+  border: 1px solid #fff;
+  margin: 10px auto;
+}
+.yidong_img .button_group button:active {
+  opacity: 0.4;
+}
+.yidong_img .button_group button.fast_search {
+  width: 100%;
+  background-color: #fff;
+  color: #3E8EFF;
+  line-height: 40px;
+}
+.yidong_img .button_group button.setting {
+  width: 48%;
+  color: #fff;
+  float: left;
+}
+.yidong_img .button_group button.exit {
+  width: 48%;
+  color: #fff;
+  float: right;
+}
+/* 日期选择器 */
+.date_btn,
+.date_ctrl,
+.date_grid > div {
+  color: #3E8EFF;
+}
+.slideInUp {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+input[type="radio"] {
+  opacity: 0;
+}

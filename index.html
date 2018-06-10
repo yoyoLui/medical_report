@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>手机登陆</title>
+</head>
+<style>
+    #choose_flag {
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <img src="img/bg.png" alt="" class="bg_img ">
+    <div class="index con">
+        <img src="img/zrlogo.png" alt="" class="logo">
+        <div class="common_part input_part">
+            <div class="common_input input_phone">
+                <img src="img/mobile.png" alt="">
+                <input type="text" class="input_item" placeholder="请输入手机号" maxlength="11" id="phone">
+                <button onclick="sendCode()" id="click_sendCode">发送验证码</button>
+            </div>
+            <div class="common_input input_code">
+                <img src="img/message.png" alt="">
+                <input type="text" class="input_item" placeholder="请输入验证码" maxlength="6" id="code">
+            </div>
+        </div>
+        <div class="common_part button_part">
+            <button class="search" id="button1">手机号查询</button>
+            <button class="get_report" onclick="click_getreport()" id="button2">获取报告</button>
+            <div>
+                <div>
+                    <img src="img/ok.png" alt="" id="choose_flag" style="display: none">
+                </div>
+                <span>点击获取报告即表示同意《服务协议》</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    window.$$ = function(str) {
+        return document.getElementById(str);
+    };
+
+    function click_getreport() {
+        if ($$('choose_flag').style.display == "none") {
+            $$('choose_flag').style.display = "inline-block";
+        } else if ($$('choose_flag').style.display == "inline-block" || $$('choose_flag').style.display == '') {
+            $$('choose_flag').style.display = "none";
+        };
+
+    }
+    var can_sendcode = true; //可获取验证码
+
+    function sendCode() {
+        var phone = $$('phone').value;
+        if (can_sendcode && checkMobile(phone)) {
+            console.log(phone);
+            var time = 60;
+            var timer = setInterval(function() {
+                time--;
+                if (time == 0) {
+                    can_sendcode = true;
+                    $$('click_sendCode').innerHTML = "发送验证码";
+                    clearInterval(timer);
+                } else {
+                    $$('click_sendCode').innerHTML = time + "秒后重发";
+                    can_sendcode = false;
+                }
+            }, 1000);
+        }
+    }
+
+    function checkMobile(phone) {
+        if (!(/^1[0-9][0-9]\d{8}$/.test(phone))) {
+
+            alert('请输入正确手机号');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</html>

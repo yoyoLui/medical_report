@@ -1,0 +1,165 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 12px "微软雅黑";
+    font-family: PingFangSC-Regular;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+button,
+input {
+    border-style: none;
+    background-color: transparent;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #fff;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #fff;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #fff;
+}
+
+button:active {
+    opacity: 0.4;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+html {
+    font-size: 13.65px;
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+    html {
+        font-size: 17.664px;
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 639px) {
+    html {
+        font-size: 19px;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 719px) {
+    html {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 749px) {
+    html {
+        font-size: 23px;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 799px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    /* div.index,
+    div.check_date,
+    div.yidong_img {
+        width: 600px;
+        left: 50%;
+        margin-left: -300px;
+    } */
+    div.yidong_img,
+    div.check_date,
+    div.index {
+        width: 600px;
+        left: 50%;
+        margin-left: -300px;
+    }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../lib/lCalendar.css">
+    <script src="../lib/lCalendar.min.js"></script>
+    <script src=""></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <title>检查日期</title>
+</head>
+
+<body>
+    <img src="../img/search_bg.png" alt="" class="bg_img ">
+    <div class="check_date">
+        <div class="list">
+            <label class="list_item" for="buxian" onclick="click_item()">
+                            <span>不限</span>
+                            <div class="gouxuan" >
+                                <input type="radio" id="buxian" name="group" value="0">
+                            </div>
+                        </label>
+            <label class="list_item" for="today" onclick="click_item()">
+                            <span>今天</span>
+                            <div class="gouxuan" >
+                                <input type="radio" id="today" name="group" value="1">
+                            </div>
+                        </label>
+            <label class="list_item" for="am" onclick="click_item()">
+                                <span>上午</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="am" name="group" value="2">
+                                </div>
+                        </label>
+            <label class="list_item" for="pm" onclick="click_item()">
+                                <span>下午</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="pm" name="group" value="3">
+                                </div>
+                        </label>
+            <label class="list_item" for="onehour" onclick="click_item()">
+                                <span>1小时</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="onehour" name="group" value="4">
+                                </div>
+                        </label>
+            <label class="list_item" for="fourhour" onclick="click_item()">
+                                <span>4小时</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="fourhour" name="group" value="5">
+                                </div>
+                        </label>
+            <label class="list_item" for="yestoday" onclick="click_item()">
+                                <span>昨天</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="yestoday" name="group" value="6">
+                                </div>
+                        </label>
+            <label class="list_item" for="oneweek" onclick="click_item()">
+                                <span>1周</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="oneweek" name="group" value="7">
+                                </div>
+                        </label>
+            <label class="list_item" for="onemonth" onclick="click_item()">
+                                <span>1月</span>
+                                <div class="gouxuan" >
+                                   
+                                    <input type="radio" id="onemonth" name="group" value="8">
+                                </div>
+                        </label>
+            <label class="list_item" onclick="click_item('self_choose')">
+                                <span>选择</span>
+                                <input id="date_text" type="text" readonly=""/>
+                              
+                        </label>
+
+
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+<script>
+    var calendartime = new lCalendar();
+    calendartime.init({
+        'trigger': '#date_text',
+        'type': 'date'
+    });
+    /**
+     * 获取input = radio 单选框中选中的值
+     * @param tagNameAttr string  radio组中input的name属性值
+     * return 返回被选中radio的值
+     */
+    var radio_tag = document.getElementsByName('group');
+
+    function getRadioButtonChecked(tagNameAttr) {
+        for (var i = 0; i < radio_tag.length; i++) {
+            if (radio_tag[i].checked) {
+                var checkvalue = radio_tag[i].value;
+                return checkvalue;
+                break;
+            }
+        }
+    }
+    // 清空所有radio
+    function removeRadioButtonChecked(tagNameAttr) {
+        for (var i = 0; i < radio_tag.length; i++) {
+            if (radio_tag[i].checked) {
+                radio_tag[i].checked = false;
+                imgs[0].parentNode.removeChild(imgs[0]);
+                break;
+            }
+        }
+    }
+
+    var imgs = document.getElementsByClassName('check_img');
+    // 清空所有勾号
+    function removeRightChecked() {
+        // if (imgs.length == 0) {
+        //     return;
+        // }
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].parentNode.removeChild(imgs[i]);
+
+        }
+    }
+    //点击list
+    var click_times = 0;
+
+    function click_item(p) {
+
+        if (p == 'self_choose') {
+            removeRadioButtonChecked('group');
+        } else {
+            document.getElementById('date_text').value = '';
+            if (click_times == 0) {
+                click_times++;
+                return;
+            } else if (click_times == 1) {
+                click_times = 0;
+            }
+            // 调用
+            var selected_index = getRadioButtonChecked("group");
+            console.log("selected_index==" + selected_index);
+            var oTest = radio_tag[selected_index]
+            var newNode = document.createElement("img");
+            newNode.src = "../img/time_selected.png";
+            newNode.className = 'check_img';
+            removeRightChecked(); //移除所有勾号
+            oTest.parentNode.insertBefore(newNode, null); //插入勾号
+        }
+
+    }
+</script>
+
+</html>
